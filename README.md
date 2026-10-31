@@ -149,4 +149,8 @@ PR 里**只有测试**。业务代码一行都不改。
 
 相关演示见 [docs/money-budget-demo.md](docs/money-budget-demo.md)：它验证的是失败会不会被如实上报，而不是预算拦截能力本身。
 
-另见 [docs/drills/probe-1793463204.md](docs/drills/probe-1793463204.md)：一次探针（probe）运行的存档，记录它验证了什么、没证明什么。
+## 演练存档
+
+这里存放历次探针（probe）运行的存档记录，用途是留痕，不作为行为约定。
+
+- [docs/drills/probe-1793463204.md](docs/drills/probe-1793463204.md)：一次探针运行的存档，记录它验证了什么、没证明什么。
