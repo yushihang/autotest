@@ -1,1 +1,327 @@
-/* 区块 #opening 的独立样式，由后续 issue 填充。 */
+/* ==========================================================================
+   区块 #opening：三张场景卡、日常类比、常见误解、过渡文案与「继续」入口。
+   仅引用 styles.css 中的设计 token。
+   ========================================================================== */
+
+/* 开场是整页的第一屏，卡片需要比正文阅读宽度更宽。 */
+#opening .section__content {
+  max-width: var(--page-max);
+}
+
+/* --------------------------------------------------------------------------
+   开场正文：日常类比在卡片之前，常见误解在卡片之后。
+   -------------------------------------------------------------------------- */
+
+.opening__analogy {
+  max-width: var(--measure);
+  margin-top: var(--space-5);
+  color: var(--color-ink-soft);
+}
+
+.opening__misconception {
+  max-width: var(--measure);
+  margin-top: var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  color: var(--color-ink-soft);
+  background-color: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.opening__misconception p + p {
+  margin-top: var(--space-3);
+}
+
+.opening__misconception-label {
+  font-weight: 650;
+  color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   卡片网格：默认单列（375px 下纵向排列），48rem 起三列。
+   -------------------------------------------------------------------------- */
+
+.opening__cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.opening-card {
+  min-width: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.opening-card.is-open {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+@media (hover: hover) {
+  .opening-card:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  .opening-card.is-open:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+.opening-card__heading {
+  font: inherit;
+  line-height: inherit;
+  text-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   整张卡都是按钮：标题、场景、提示都放在 button 里，点击任意位置都能展开。
+   -------------------------------------------------------------------------- */
+
+.opening-card__trigger {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-5);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+}
+
+.opening-card__trigger:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.opening-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.opening-card__icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-accent);
+  background-color: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+}
+
+.opening-card__icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.opening-card__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  letter-spacing: 0.14em;
+  font-variant-numeric: tabular-nums;
+}
+
+.opening-card__title {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: 650;
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+  overflow-wrap: break-word;
+}
+
+.opening-card__scene {
+  display: block;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-muted);
+  overflow-wrap: break-word;
+}
+
+.opening-card__cue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  padding-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--color-border);
+}
+
+.opening-card__cue-label {
+  font-weight: 600;
+}
+
+.opening-card__chevron {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.opening-card.is-open .opening-card__chevron {
+  transform: rotate(180deg);
+}
+
+/* --------------------------------------------------------------------------
+   展开内容：同一时刻只有一张可见，靠 hidden 属性彻底移出布局，不会重叠。
+   -------------------------------------------------------------------------- */
+
+.opening-card__panel {
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.opening-card__panel[hidden] {
+  display: none;
+}
+
+.opening-card__panel:not([hidden]) {
+  animation: opening-reveal 0.22s ease-out both;
+}
+
+.opening-card__ledger {
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+  overflow-wrap: break-word;
+}
+
+@keyframes opening-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   过渡文案与继续入口
+   -------------------------------------------------------------------------- */
+
+.opening__transition {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  color: var(--color-ink-soft);
+  background-color: var(--color-surface-muted);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+.opening__transition[hidden] {
+  display: none;
+}
+
+.opening__transition:not([hidden]) {
+  animation: opening-reveal 0.22s ease-out both;
+}
+
+.opening__transition-mark {
+  display: inline-flex;
+  flex: none;
+  color: var(--color-accent);
+}
+
+.opening__transition-mark svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.opening__next {
+  margin-top: var(--space-6);
+}
+
+.opening__continue {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-weight: 600;
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+
+.opening__continue:hover {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent-strong);
+}
+
+.opening__continue svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.opening__continue:hover svg {
+  transform: translateX(0.2rem);
+}
+
+/* --------------------------------------------------------------------------
+   响应式
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 48rem) {
+  .opening__cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+@media (min-width: 64rem) {
+  /* 让三列卡片吃满页面宽度，而不是被阅读宽度限制。 */
+  #opening .section__inner {
+    grid-template-columns: 4rem minmax(0, 1fr);
+    column-gap: var(--space-5);
+    align-items: start;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   减少动态效果：切换不播放任何动画。
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .opening-card,
+  .opening-card__chevron,
+  .opening__continue svg {
+    transition: none;
+  }
+
+  .opening-card__panel:not([hidden]),
+  .opening__transition:not([hidden]) {
+    animation: none;
+  }
+
+  .opening__continue:hover svg {
+    transform: none;
+  }
+}
