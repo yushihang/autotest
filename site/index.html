@@ -59,7 +59,129 @@
         <div class="section__content">
           <h2 class="section__title" id="opening-title">开场：从你的一天说起</h2>
           <p class="section__lead">你每天上网做的事，记录都放在别人家里。</p>
-          <p class="section__placeholder">正文占位：本节的展开内容与互动由后续区块填充。</p>
+
+          <div class="opening__cards">
+            <article class="opening-card" data-opening-card>
+              <h3 class="opening-card__heading">
+                <button
+                  class="opening-card__trigger"
+                  type="button"
+                  id="opening-card-1-trigger"
+                  aria-controls="opening-card-1-panel"
+                >
+                  <span class="opening-card__top">
+                    <span class="opening-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                        <circle cx="16" cy="16" r="5.5" />
+                        <path d="M16 5v3M16 24v3M5 16h3M24 16h3M8.2 8.2l2.1 2.1M21.7 21.7l2.1 2.1M23.8 8.2l-2.1 2.1M10.3 21.7l-2.1 2.1" />
+                        <path d="M23 35h14.5a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 0 0-3.5-3.5H33l-5-4v4h-5a3.5 3.5 0 0 0-3.5 3.5v5A3.5 3.5 0 0 0 23 35Z" />
+                      </svg>
+                    </span>
+                    <span class="opening-card__num" aria-hidden="true">01</span>
+                  </span>
+                  <span class="opening-card__title" id="opening-card-1-title">你的一天</span>
+                  <span class="opening-card__scene">早上刷消息，中午点外卖，晚上给朋友转钱。</span>
+                  <span class="opening-card__cue">
+                    <span class="opening-card__cue-label">它在记什么账</span>
+                    <svg class="opening-card__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="opening-card__panel" id="opening-card-1-panel" role="region" aria-labelledby="opening-card-1-title">
+                <p class="opening-card__ledger">这些动作你每天都在做，但记录最后落在哪里，很少有人问。</p>
+              </div>
+            </article>
+
+            <article class="opening-card" data-opening-card>
+              <h3 class="opening-card__heading">
+                <button
+                  class="opening-card__trigger"
+                  type="button"
+                  id="opening-card-2-trigger"
+                  aria-controls="opening-card-2-panel"
+                >
+                  <span class="opening-card__top">
+                    <span class="opening-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                        <rect x="6" y="8" width="28" height="9" rx="2.5" />
+                        <rect x="6" y="21" width="28" height="9" rx="2.5" />
+                        <path d="M11 12.5h.01M11 25.5h.01M16 12.5h10M16 25.5h10" />
+                        <rect x="29" y="34" width="13" height="9" rx="2.5" />
+                        <path d="M32 34v-2.5a3.5 3.5 0 0 1 7 0V34" />
+                      </svg>
+                    </span>
+                    <span class="opening-card__num" aria-hidden="true">02</span>
+                  </span>
+                  <span class="opening-card__title" id="opening-card-2-title">记录在哪</span>
+                  <span class="opening-card__scene">存在公司的机房里。</span>
+                  <span class="opening-card__cue">
+                    <span class="opening-card__cue-label">它在记什么账</span>
+                    <svg class="opening-card__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="opening-card__panel" id="opening-card-2-panel" role="region" aria-labelledby="opening-card-2-title">
+                <p class="opening-card__ledger">它们落在公司买的、二十四小时开着机的电脑里（这种机器叫服务器），房间上锁，钥匙在公司手上。你随时能用，但带不走，也没法自己核对它有没有被改过。</p>
+              </div>
+            </article>
+
+            <article class="opening-card" data-opening-card>
+              <h3 class="opening-card__heading">
+                <button
+                  class="opening-card__trigger"
+                  type="button"
+                  id="opening-card-3-trigger"
+                  aria-controls="opening-card-3-panel"
+                >
+                  <span class="opening-card__top">
+                    <span class="opening-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                        <rect x="5" y="6" width="22" height="34" rx="3.5" />
+                        <path d="M11 14h10M11 20h10M11 26h6" />
+                        <path d="M34 29.5c0-2.5 1.6-4 4-4s4 1.5 4 4c0 2-1.5 2.6-2.6 3.4-.8.6-1.4 1.3-1.4 2.3" />
+                        <circle cx="38" cy="39.5" r="1" fill="currentColor" stroke="none" />
+                      </svg>
+                    </span>
+                    <span class="opening-card__num" aria-hidden="true">03</span>
+                  </span>
+                  <span class="opening-card__title" id="opening-card-3-title">一个问题</span>
+                  <span class="opening-card__scene">如果这本账不只一家有，而是很多人各存一份、互相核对，会怎样？</span>
+                  <span class="opening-card__cue">
+                    <span class="opening-card__cue-label">它在记什么账</span>
+                    <svg class="opening-card__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div class="opening-card__panel" id="opening-card-3-panel" role="region" aria-labelledby="opening-card-3-title">
+                <p class="opening-card__ledger">接下来十一节，只讨论一个问题：这本账能不能不由一家保管。</p>
+              </div>
+            </article>
+          </div>
+
+          <p class="opening__transition" data-opening-transition>
+            <span class="opening__transition-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8 12h8M13 8l4 4-4 4" />
+              </svg>
+            </span>
+            <span>这些账本都需要一个大家都信的人。</span>
+          </p>
+
+          <p class="opening__next">
+            <a class="opening__continue" href="#web2">
+              <span>继续</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </p>
         </div>
       </div>
       <!-- section:opening:end -->
