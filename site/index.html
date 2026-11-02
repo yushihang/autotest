@@ -72,7 +72,94 @@
         <div class="section__content">
           <h2 class="section__title" id="web2-title">Web2：用账号换来的方便</h2>
           <p class="section__lead">我们用账号换方便，代价是记录归平台保管。</p>
-          <p class="section__placeholder">正文占位：本节的展开内容与互动由后续区块填充。</p>
+
+          <div class="web2__prose">
+            <p>像把家里的账本、相册、通讯录一起寄存在小区门口的寄存柜。柜子不是你的，钥匙在物业手里，但确实比自己扛着轻松。</p>
+            <p>Web2 指今天这种“平台出机器、你出内容”的互联网。你发的动态、下的订单，都集中存在公司自己的一个大仓库里（这种集中存放数据的地方叫<strong>数据库</strong>），钥匙在公司手上。这不算阴谋，是分工：公司出服务器和人力，你出内容和时间。代价是记录只在一家手里——你很难带走，也很难自己核对它有没有被改过。</p>
+          </div>
+
+          <div class="web2__demo" data-web2-demo data-web2-state="normal">
+            <div class="web2__demo-head">
+              <h3 class="web2__subtitle">四项检查：哪些东西其实不在你手里</h3>
+              <p class="web2__hint" id="web2-demo-hint">点下面的按钮，模拟一次平台封禁。只是演示：不连接真实账号，也不请求任何接口。</p>
+            </div>
+
+            <ul class="web2-checks" aria-label="四项检查">
+              <li class="web2-check" data-check="account" data-check-name="账号" data-check-state="normal" data-banned-status="已停用">
+                <div class="web2-check__head">
+                  <h4 class="web2-check__name">账号</h4>
+                  <p class="web2-check__status">
+                    <span class="web2-check__icon" data-check-icon aria-hidden="true">✓</span>
+                    <span data-check-status>正常</span>
+                  </p>
+                </div>
+                <p class="web2-check__value" data-check-value>@xiaoyu</p>
+                <p class="web2-check__desc">每天用它登录、发消息、认识新朋友；它能被平台单方面停用。</p>
+                <p class="web2-check__why"><span class="web2-check__why-label">为什么平台能这样做</span>账号只是平台数据库里的一条记录；用户协议由平台单方修改，停用不需要你同意。</p>
+              </li>
+
+              <li class="web2-check" data-check="balance" data-check-name="余额" data-check-state="normal" data-banned-status="已冻结" data-banned-value="不可用">
+                <div class="web2-check__head">
+                  <h4 class="web2-check__name">余额</h4>
+                  <p class="web2-check__status">
+                    <span class="web2-check__icon" data-check-icon aria-hidden="true">✓</span>
+                    <span data-check-status>可用</span>
+                  </p>
+                </div>
+                <p class="web2-check__value" data-check-value>¥ 1,286.40</p>
+                <p class="web2-check__desc">你在平台里转的每一笔都要经过平台记账；平台说冻结，就冻结。</p>
+                <p class="web2-check__why"><span class="web2-check__why-label">为什么平台能这样做</span>余额是平台数据库里的一行数字；能不能转出，按平台单方修改的规则算。</p>
+              </li>
+
+              <li class="web2-check" data-check="works" data-check-name="作品" data-check-state="normal" data-banned-status="仅自己可见">
+                <div class="web2-check__head">
+                  <h4 class="web2-check__name">作品</h4>
+                  <p class="web2-check__status">
+                    <span class="web2-check__icon" data-check-icon aria-hidden="true">✓</span>
+                    <span data-check-status>公开</span>
+                  </p>
+                </div>
+                <p class="web2-check__value" data-check-value>37 条内容</p>
+                <p class="web2-check__desc">你发的照片和文字存在公司的服务器上；平台改规则、关服务，内容就跟着消失。</p>
+                <p class="web2-check__why"><span class="web2-check__why-label">为什么平台能这样做</span>作品文件存在平台的服务器上，你手里没有完整副本；给谁看、留多久，由平台单方修改的规则决定。</p>
+              </li>
+
+              <li class="web2-check" data-check="relations" data-check-name="社交关系" data-check-state="normal" data-banned-status="已断开">
+                <div class="web2-check__head">
+                  <h4 class="web2-check__name">社交关系</h4>
+                  <p class="web2-check__status">
+                    <span class="web2-check__icon" data-check-icon aria-hidden="true">✓</span>
+                    <span data-check-status>已连接</span>
+                  </p>
+                </div>
+                <p class="web2-check__value" data-check-value>214 位好友</p>
+                <p class="web2-check__desc">好友和关注都在平台的名单里；平台断开连接，你就找不到人。</p>
+                <p class="web2-check__why"><span class="web2-check__why-label">为什么平台能这样做</span>好友关系存在平台的关系表里；连接和断开，都按平台单方修改的规则执行。</p>
+              </li>
+            </ul>
+
+            <p class="web2__summary">四项里只要有一样让你卡住，Web3 想谈的就是它。</p>
+
+            <div class="web2__actions">
+              <button class="web2-btn web2-btn--primary" type="button" data-web2-action="ban" aria-describedby="web2-demo-hint">模拟平台封禁</button>
+              <button class="web2-btn" type="button" data-web2-action="restore" aria-describedby="web2-demo-hint">恢复</button>
+            </div>
+
+            <div class="web2-toast" data-web2-toast hidden>
+              <span class="web2-toast__badge">平台通知</span>
+              <span>你的账号因「违反社区规则」被停用。余额、作品与好友关系同时受限；你可以申诉，但处理权在平台。</span>
+            </div>
+
+            <p class="web2__live" role="status" aria-live="polite" aria-atomic="true" data-web2-live></p>
+          </div>
+
+          <div class="web2__myth">
+            <p class="web2__myth-label">常见误解</p>
+            <p><span class="web2__myth-term">误解：</span>只有平台作恶，才需要换一套东西。</p>
+            <p><span class="web2__myth-term">实际上：</span>大多数平台并没有作恶，问题在“能力的分布”：只要记录和规则都集中在同一方，你就只能相信它，而没有办法自己验证。</p>
+          </div>
+
+          <p class="web2__transition">不是某家公司坏，是这套结构如此。</p>
         </div>
       </div>
       <!-- section:web2:end -->
