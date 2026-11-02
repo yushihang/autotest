@@ -1,11 +1,40 @@
 /* ==========================================================================
-   区块 #opening：三张场景卡、过渡文案与「继续」入口。
+   区块 #opening：三张场景卡、日常类比、常见误解、过渡文案与「继续」入口。
    仅引用 styles.css 中的设计 token。
    ========================================================================== */
 
 /* 开场是整页的第一屏，卡片需要比正文阅读宽度更宽。 */
 #opening .section__content {
   max-width: var(--page-max);
+}
+
+/* --------------------------------------------------------------------------
+   开场正文：日常类比在卡片之前，常见误解在卡片之后。
+   -------------------------------------------------------------------------- */
+
+.opening__analogy {
+  max-width: var(--measure);
+  margin-top: var(--space-5);
+  color: var(--color-ink-soft);
+}
+
+.opening__misconception {
+  max-width: var(--measure);
+  margin-top: var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  color: var(--color-ink-soft);
+  background-color: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.opening__misconception p + p {
+  margin-top: var(--space-3);
+}
+
+.opening__misconception-label {
+  font-weight: 650;
+  color: var(--color-text);
 }
 
 /* --------------------------------------------------------------------------
@@ -48,7 +77,7 @@
 .opening-card__heading {
   font: inherit;
   line-height: inherit;
-  text-wrap: normal;
+  text-wrap: wrap;
 }
 
 /* --------------------------------------------------------------------------
